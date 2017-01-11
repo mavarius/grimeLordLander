@@ -41,16 +41,22 @@ html {
   font-family: "Open Sans", sans-serif;
   background-color: #03a9f4;
   color: #eee; }
+  @media (min-width: 768px) {
+    html {
+      font-size: 2.5vmin; } }
+  @media (min-width: 1200px) {
+    html {
+      font-size: 2vmin; } }
 
 p {
-  margin-bottom: 2vmin; }
+  margin-bottom: 1em; }
 
 h1, h2, h3, h4, h5 {
   font-family: "Baloo Bhaina", sans-serif; }
 
 h1 {
-  font-size: 3em;
-  text-shadow: 0px 0.5vmin 0px #bbbbbb; }
+  font-size: 2em;
+  text-shadow: 0px 0.25vmin 0px #b0bec5, 0px 0.5vmin 0px #b0bec5; }
 
 #container {
   display: flex;
@@ -68,11 +74,10 @@ h1 {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   text-align: left;
   padding: 5vmin;
-  min-height: 80vh;
   flex: 1; }
 
 .screenshotBlock {
@@ -80,46 +85,79 @@ h1 {
   @media (min-width: 768px) {
     .screenshotBlock {
       order: 1; } }
-  .screenshotBlock .screenshot img {
-    border-radius: 5px; }
+  .screenshotBlock .screenshot {
+    background-color: #eee;
+    box-sizing: border-box;
+    padding: 50px 10px;
+    border-radius: 20px;
+    max-width: 60vmin;
+    box-shadow: 0px 1vmin 0px #b0bec5;
+    margin: 5vmin; }
+  .screenshotBlock img {
+    object-fit: contain;
+    width: 100%; }
 
 .formBlock {
   border: 2px solid white;
-  border-radius: 5px;
+  border-radius: 10px;
   order: 1; }
   @media (min-width: 768px) {
     .formBlock {
       order: 2; } }
 
+.headerGroup {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 5vmin auto; }
+
+.description {
+  margin: 5vmin auto; }
+
+.joinBeta {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 5vmin auto; }
+
 input {
   box-sizing: border-box;
   border: 0;
-  border-radius: 5px;
+  border-radius: 10px;
   font-size: 1em;
-  padding: 2vmin;
+  padding: 5vmin;
   width: 100%;
   text-indent: 2vmin;
-  margin: 2vmin 0; }
+  margin: 1vmin 0; }
 
 button {
   width: 100%;
   background-color: #008cff;
   box-shadow: 0px 1vmin 0px #0081ff;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-family: "Baloo Bhaina", sans-serif;
-  font-size: 1em;
+  font-size: 2em;
   text-align: center;
   color: #eee;
-  margin: 2vmin 0; }
+  margin: 1vmin auto; }
 
 .icon {
-  margin: 2vmin; }
+  margin-right: 5vmin; }
   .icon img {
     background-color: #0081ff;
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 10px;
+    width: 25vmin;
     max-width: 128px;
     border: 2px solid #0081ff; }
+
+footer {
+  font-size: .75em;
+  text-align: center;
+  margin: 5vmin; }
 
 /*# sourceMappingURL=style.css.map */
