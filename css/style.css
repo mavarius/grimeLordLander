@@ -43,10 +43,10 @@ html {
   color: #eee; }
   @media (min-width: 768px) {
     html {
-      font-size: 2.5vmin; } }
+      font-size: 2.25vmin; } }
   @media (min-width: 1200px) {
     html {
-      font-size: 2vmin; } }
+      font-size: 1.5vmin; } }
 
 p {
   margin-bottom: 1em; }
@@ -55,8 +55,19 @@ h1, h2, h3, h4, h5 {
   font-family: "Baloo Bhaina", sans-serif; }
 
 h1 {
-  font-size: 2em;
-  text-shadow: 0px 0.25vmin 0px #b0bec5, 0px 0.5vmin 0px #b0bec5; }
+  font-size: 2.5em;
+  text-shadow: 0px 0.5vmin 0px #b0bec5; }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2.25em;
+      text-shadow: 0px 0.3vmin 0px #b0bec5; } }
+  @media (min-width: 1200px) {
+    h1 {
+      font-size: 3em;
+      text-shadow: 0px 0.3vmin 0px #b0bec5; } }
+
+h2 {
+  font-size: 1.5em; }
 
 #container {
   display: flex;
@@ -65,10 +76,12 @@ h1 {
   width: 100vw;
   padding: 5vmin;
   box-sizing: border-box;
-  flex-direction: column; }
+  flex-direction: column;
+  min-height: 95vh; }
   @media (min-width: 768px) {
     #container {
-      flex-direction: row; } }
+      flex-direction: row;
+      padding: 0 5vmin; } }
 
 .screenshotBlock, .formBlock {
   box-sizing: border-box;
@@ -77,8 +90,10 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: left;
-  padding: 5vmin;
-  flex: 1; }
+  min-height: 80vh; }
+  @media (min-width: 768px) {
+    .screenshotBlock, .formBlock {
+      width: 50%; } }
 
 .screenshotBlock {
   order: 2; }
@@ -88,32 +103,75 @@ h1 {
   .screenshotBlock .screenshot {
     background-color: #eee;
     box-sizing: border-box;
-    padding: 50px 10px;
+    padding: 6vh 1vh;
     border-radius: 20px;
-    max-width: 60vmin;
+    height: 80vh;
+    max-height: 569px;
+    max-width: 320px;
+    width: auto;
     box-shadow: 0px 1vmin 0px #b0bec5;
     margin: 5vmin; }
-  .screenshotBlock img {
-    object-fit: contain;
-    width: 100%; }
+    @media (min-width: 1200px) {
+      .screenshotBlock .screenshot {
+        padding: 4vh 1vh; } }
+    .screenshotBlock .screenshot .screen {
+      width: 100%;
+      height: 100%;
+      position: relative; }
+      .screenshotBlock .screenshot .screen img {
+        object-fit: contain;
+        height: 100%; }
 
 .formBlock {
-  border: 2px solid white;
-  border-radius: 10px;
   order: 1; }
   @media (min-width: 768px) {
     .formBlock {
       order: 2; } }
+
+.formFrame {
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 5vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left; }
+  @media (min-width: 768px) {
+    .formFrame {
+      padding: 3vmin; } }
+  @media (min-width: 1200px) {
+    .formFrame {
+      padding: 2vmin;
+      width: 60%; } }
 
 .headerGroup {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
-  margin: 5vmin auto; }
+  margin: 5vmin auto;
+  flex-wrap: wrap; }
+  @media (min-width: 768px) {
+    .headerGroup {
+      margin: 2vmin; } }
+  .headerGroup .icon {
+    flex: 1;
+    margin-right: 5vmin; }
+    .headerGroup .icon img {
+      background-color: #0081ff;
+      box-sizing: border-box;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 128px; }
+  .headerGroup .headers {
+    flex: 3; }
 
 .description {
   margin: 5vmin auto; }
+  @media (min-width: 768px) {
+    .description {
+      margin: 2vmin auto; } }
 
 .joinBeta {
   display: flex;
@@ -122,6 +180,9 @@ h1 {
   align-items: center;
   width: 100%;
   margin: 5vmin auto; }
+  @media (min-width: 768px) {
+    .joinBeta {
+      margin: 2vmin auto; } }
 
 input {
   box-sizing: border-box;
@@ -132,6 +193,9 @@ input {
   width: 100%;
   text-indent: 2vmin;
   margin: 1vmin 0; }
+  @media (min-width: 768px) {
+    input {
+      padding: 2vmin; } }
 
 button {
   width: 100%;
@@ -143,21 +207,20 @@ button {
   font-size: 2em;
   text-align: center;
   color: #eee;
-  margin: 1vmin auto; }
+  margin: 1vmin auto;
+  cursor: pointer;
+  padding-top: .25em;
+  transition: .25s all; }
 
-.icon {
-  margin-right: 5vmin; }
-  .icon img {
-    background-color: #0081ff;
-    box-sizing: border-box;
-    border-radius: 10px;
-    width: 25vmin;
-    max-width: 128px;
-    border: 2px solid #0081ff; }
+button:hover {
+  color: white;
+  background-color: #ff9800;
+  box-shadow: 0px 1vmin 0px #f57c00;
+  transition: .25s all; }
 
 footer {
   font-size: .75em;
   text-align: center;
-  margin: 5vmin; }
+  height: 5vh; }
 
 /*# sourceMappingURL=style.css.map */

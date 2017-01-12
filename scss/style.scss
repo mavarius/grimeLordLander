@@ -9,6 +9,8 @@ $desktop: "(min-width: 1200px)";
 // colors
 $white: #eee;
 $lightBlue: rgba(3, 169, 244, 1);
+$orange: rgba(255, 152, 0, 1);
+$darkOrange: rgba(245, 124, 0, 1);
 $blue: rgba(0, 140, 255, 1);
 $darkBlue: rgba(0, 129, 255, 1);
 $lightGrey: rgba(176, 190, 197, 1);
@@ -22,10 +24,10 @@ html {
   background-color: $lightBlue;
   color: $white;
   @media #{$tablet} {
-    font-size: 2.5vmin;
+    font-size: 2.25vmin;
   }
   @media #{$desktop} {
-    font-size: 2vmin;
+    font-size: 1.5vmin;
   }
 }
 
@@ -38,9 +40,20 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 2em;
-  text-shadow: 0px .25vmin 0px $lightGrey,
-               0px .5vmin 0px $lightGrey;
+  font-size: 2.5em;
+  text-shadow: 0px .5vmin 0px $lightGrey;
+  @media #{$tablet} {
+    font-size: 2.25em;
+    text-shadow: 0px .3vmin 0px $lightGrey;
+  }
+  @media #{$desktop} {
+    font-size: 3em;
+    text-shadow: 0px .3vmin 0px $lightGrey;
+  }
+}
+
+h2 {
+  font-size: 1.5em;
 }
 
 #container {
@@ -51,8 +64,10 @@ h1 {
   padding: 5vmin;
   box-sizing: border-box;
   flex-direction: column;
+  min-height: 95vh;
   @media #{$tablet} {
     flex-direction: row;
+    padding: 0 5vmin;
   }
 }
 
@@ -63,8 +78,10 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: left;
-  padding: 5vmin;
-  flex: 1;
+  min-height: 80vh;
+  @media #{$tablet} {
+    width: 50%;
+  }
 }
 
 .screenshotBlock {
@@ -76,24 +93,54 @@ h1 {
   .screenshot {
     background-color: $white;
     box-sizing: border-box;
-    padding: 50px 10px;
+    padding: 6vh 1vh;
     border-radius: 20px;
-    max-width: 60vmin;
+    height: 80vh;
+    max-height: 569px;
+    max-width: 320px;
+    width: auto;
     box-shadow: 0px 1vmin 0px $lightGrey;
     margin: 5vmin;
-  }
-  img {
-    object-fit: contain;
-    width: 100%;
+    @media #{$desktop} {
+      padding: 4vh 1vh;
+    }
+
+    .screen {
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      img {
+        object-fit: contain;
+        height: 100%;
+      }
+    }
+
   }
 }
 
 .formBlock {
-  border: 2px solid white;
-  border-radius: 10px;
   order: 1;
   @media #{$tablet} {
     order: 2;
+  }
+}
+
+.formFrame {
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 5vmin;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  @media #{$tablet} {
+    padding: 3vmin;
+  }
+  @media #{$desktop} {
+    padding: 2vmin;
+    width: 60%;
   }
 }
 
@@ -103,10 +150,34 @@ h1 {
   align-items: center;
   justify-content: center;
   margin: 5vmin auto;
+  flex-wrap: wrap;
+  @media #{$tablet} {
+    margin: 2vmin;
+  }
+
+  .icon {
+    flex: 1;
+    margin-right: 5vmin;
+
+    img {
+      background-color: $darkBlue;
+      box-sizing: border-box;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 128px;
+    }
+  }
+
+  .headers {
+    flex: 3;
+  }
 }
 
 .description {
   margin: 5vmin auto;
+  @media #{$tablet} {
+    margin: 2vmin auto;
+  }
 }
 
 .joinBeta {
@@ -116,6 +187,9 @@ h1 {
   align-items: center;
   width: 100%;
   margin: 5vmin auto;
+  @media #{$tablet} {
+    margin: 2vmin auto;
+  }
 }
 
 input {
@@ -127,6 +201,9 @@ input {
   width: 100%;
   text-indent: 2vmin;
   margin: 1vmin 0;
+  @media #{$tablet} {
+    padding: 2vmin;
+  }
 }
 
 button {
@@ -140,23 +217,20 @@ button {
   text-align: center;
   color: $white;
   margin: 1vmin auto;
+  cursor: pointer;
+  padding-top: .25em;
+  transition: .25s all;
 }
 
-.icon {
-  margin-right: 5vmin;
-
-  img {
-    background-color: $darkBlue;
-    box-sizing: border-box;
-    border-radius: 10px;
-    width: 25vmin;
-    max-width: 128px;
-    border: 2px solid $darkBlue;
-  }
+button:hover {
+  color: white;
+  background-color: $orange;
+  box-shadow: 0px 1vmin 0px $darkOrange;
+  transition: .25s all;
 }
 
 footer {
   font-size: .75em;
   text-align: center;
-  margin: 5vmin;
+  height: 5vh;
 }
