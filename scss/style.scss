@@ -200,7 +200,7 @@ input {
   padding: 5vmin;
   width: 100%;
   text-indent: 2vmin;
-  margin: 1vmin 0;
+  margin-bottom: 2vmin;
   @media #{$tablet} {
     padding: 2vmin;
   }
@@ -216,7 +216,6 @@ button {
   font-size: 2em;
   text-align: center;
   color: $white;
-  margin: 1vmin auto;
   cursor: pointer;
   padding-top: .25em;
   transition: .25s all;
@@ -233,4 +232,28 @@ footer {
   font-size: .75em;
   text-align: center;
   height: 5vh;
+}
+
+.success {
+  font-family: $heading;
+  padding: 1em;
+  margin-bottom: 0.75rem;
+  // text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  color: $white;
+  background-color: limegreen;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
+}
+
+.error {
+  font-family: $heading;
+  padding: 1em;
+  margin-bottom: 0.75rem;
+  // text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  color: $white;
+  background-color: #f44336;
+  -webkit-border-radius: 10px;
+     -moz-border-radius: 10px;
+          border-radius: 10px;
 }

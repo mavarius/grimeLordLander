@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Grime Lord</title>
-  <!-- Start of HubSpot Embed -->
-    <script type="text/javascript" src="//js.hs-scripts.com/2815268.js" id="LeadinEmbed-2815268" crossorigin="use-credentials" async defer></script>
-  <!-- End of HubSpot Embed -->
+  <script type="text/javascript" src="//js.hs-scripts.com/2815268.js" id="LeadinEmbed-2815268" crossorigin="use-credentials" async defer></script>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./css/style.css" media="screen" title="style">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#008cff">
+  <meta name="theme-color" content="#008cff">
 </head>
 <body>
   <div id="container">
@@ -30,9 +34,10 @@
           <p>Enter your email below to join the beta.</p>
         </div>
 
-        <form class="joinBeta" name="joinBeta" action="">
-          <input type="text" name="name" placeholder="Name">
-          <input type="text" name="email" placeholder="Email">
+        <div id="form-messages"></div>
+        <form id="ajax-contact" class="joinBeta" method="post" action="mailer.php" name="joinBeta">
+          <input id="name" type="text" name="name" placeholder="Name" required>
+          <input id="email" type="email" name="email" placeholder="Email" required>
           <button type="submit" value="Submit">Join Beta</button>
         </form>
       </div>
@@ -50,5 +55,7 @@
   <footer>
     Copyright &copy; Daniel Campbell 2017
   </footer>
+
+  <script src="./js/index.js" charset="utf-8"></script>
 </body>
 </html>

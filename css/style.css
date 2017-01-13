@@ -192,7 +192,7 @@ input {
   padding: 5vmin;
   width: 100%;
   text-indent: 2vmin;
-  margin: 1vmin 0; }
+  margin-bottom: 2vmin; }
   @media (min-width: 768px) {
     input {
       padding: 2vmin; } }
@@ -207,7 +207,6 @@ button {
   font-size: 2em;
   text-align: center;
   color: #eee;
-  margin: 1vmin auto;
   cursor: pointer;
   padding-top: .25em;
   transition: .25s all; }
@@ -222,5 +221,25 @@ footer {
   font-size: .75em;
   text-align: center;
   height: 5vh; }
+
+.success {
+  font-family: "Baloo Bhaina", sans-serif;
+  padding: 1em;
+  margin-bottom: 0.75rem;
+  color: #eee;
+  background-color: limegreen;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px; }
+
+.error {
+  font-family: "Baloo Bhaina", sans-serif;
+  padding: 1em;
+  margin-bottom: 0.75rem;
+  color: #eee;
+  background-color: #f44336;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px; }
 
 /*# sourceMappingURL=style.css.map */
